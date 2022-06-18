@@ -81,6 +81,10 @@ dependencies:
   pretty_dio_logger: ^1.2.0-beta-1
   dio_http2_adapter: ^2.0.0
   state_notifier: ^0.7.2+1
+  flutter_map: ^1.1.0
+  vector_map_tiles:
+    git:
+      url: https://github.com/FaFre/flutter-vector-map-tiles.git
 
 dev_dependencies:
   flutter_test:

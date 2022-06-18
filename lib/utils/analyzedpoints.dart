@@ -2,7 +2,7 @@ import 'package:eqmonitor/utils/KyoshinMonitorlib/JmaIntensity.dart';
 import 'package:flutter/material.dart' show Color;
 import 'package:get/get.dart';
 
-class AnalyzedPoint extends GetxController {
+class AnalyzedPoint {
   AnalyzedPoint({
     required this.code,
     required this.name,

@@ -54,15 +54,7 @@ class IntroPage extends HookConsumerWidget {
       appBar: AppBar(
         backgroundColor:
             kDebugMode ? const Color.fromARGB(255, 157, 0, 0) : null,
-        title: Column(
-          children: [
-            kDebugMode
-                ? Text('EQMonitor DebugMode - ${packageInfo.buildNumber}')
-                : Text('EQMonitor (Build${packageInfo.buildNumber})'),
-            Obx(() => Text(earthQuake.lastUpdateTimeString.value)),
-          ],
-        ),
-        centerTitle: true,
+        title: Text('EQMonitor (Build${packageInfo.buildNumber})'),
         actions: [
           Obx(
             () => (appUpdate.hasUpdate.value)

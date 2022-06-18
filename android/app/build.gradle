@@ -81,6 +81,7 @@ android {
             shrinkResources true
             multiDexEnabled true
             versionNameSuffix '.r'
+            proguardFiles
         }
         debug {
             versionNameSuffix '.d'
@@ -97,18 +98,18 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0"
     implementation 'com.android.support:multidex:1.0.3'
     // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:28.4.2')
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
 
-    implementation 'com.google.firebase:firebase-crashlytics'
-    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.11'
+    implementation 'com.google.firebase:firebase-analytics:21.0.0'
     implementation 'com.google.firebase:firebase-perf'
     implementation 'com.google.firebase:firebase-messaging'
-    implementation 'com.google.android.material:material:1.7.0-alpha01'
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.work:work-runtime-ktx:2.7.0'
+    implementation 'com.google.android.material:material:1.7.0-alpha02'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
 }
 
 apply plugin: 'com.google.firebase.crashlytics'

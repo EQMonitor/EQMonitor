@@ -13,6 +13,7 @@ import 'package:eqmonitor/utils/KyoshinMonitorlib/imageParser/jmaParser.dart';
 import 'package:eqmonitor/utils/KyoshinMonitorlib/kyoshinMonitorlibTime.dart';
 import 'package:eqmonitor/utils/map/customZoomPanBehavior.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
@@ -45,6 +46,8 @@ class EarthQuake extends GetxController {
     ..maxZoomLevel = 50;
   final df = DateFormat('yyyyMMdd/yyyyMMddHHmmss');
   final Rx<Queue<Uint8List>> imageQueue = Queue<Uint8List>().obs;
+
+  final MapController mapController = MapController();
 
   /// 震度かPGAか
   final showShindo = true.obs;
@@ -143,7 +146,7 @@ class EarthQuake extends GetxController {
           .format(kyoshinMonitorlibTime.now.value);
       numberOfAnalyzedPoint.value =
           analyzedPoint.where((p0) => p0.shindo != null).length;
-    } on Exception catch (e) {
+    } on Exception {
       //logger.w(e);
       analyzedPoint.value = jmaImageParser.imageParser(
         pgaPic: [],
